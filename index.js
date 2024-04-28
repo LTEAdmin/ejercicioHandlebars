@@ -7,7 +7,7 @@ const port = process.env.PORT || 3003;
 //configuracion de HBS
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname + '/views'));
-app.engine('hanblebars', exphbs.engine({
+app.engine('handlebars', exphbs.engine({
     defaultLayout:'main',
 }));
 
