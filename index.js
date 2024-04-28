@@ -1,14 +1,16 @@
 const express = require('express');
 const app = express();// require('./routes/routes.js');
-const exphbs = require("express-handlebars");
+const exphbs = require('express-handlebars');
 const path = require("path");//
 const port = process.env.PORT || 3003;
 
 //configuracion de HBS
-app.set('view engine', 'handlebars');
+app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname + '/views'));
-app.engine('handlebars', exphbs.engine({
-    defaultLayout:'main',
+app.engine('hbs', exphbs.engine({
+    partialsDir: path.join(__dirname, 'views/partials'),
+    extname: '.hbs',
+  /*   defaultLayout:'main', */
 }));
 
 app.get('/home', (req, res) => {
