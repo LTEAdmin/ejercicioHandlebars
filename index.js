@@ -4,6 +4,8 @@ const exphbs = require('express-handlebars');
 const path = require("path");//
 const port = process.env.PORT || 3003;
 
+//static files
+app.use(express.static('assets'));
 //configuracion de HBS
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname + '/views'));
