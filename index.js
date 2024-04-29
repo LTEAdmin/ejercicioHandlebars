@@ -6,7 +6,9 @@ const port = process.env.PORT || 3003;
 
 //static files
 app.use(express.static('assets'));
-app.use ('/boot', express.static('node_modules/bootstrap/dist'));
+app.use('/boot', express.static('node_modules/bootstrap/dist/css'));
+app.use('jquery', express.static('node_modules/jquery/dist'));
+
 //configuracion de HBS
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname + '/views'));
