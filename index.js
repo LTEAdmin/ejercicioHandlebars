@@ -27,6 +27,12 @@ app.get('/about', (req, res) => {
   }); 
 });
 
+app.get("/productos", (req, res) => {
+  res.render("productos", {
+    title: ":::: Productos :::",
+  });
+});
+
 app.get("*", (req, res) => {
   res.status(404).send("esta pagina no existe    ");
 });
