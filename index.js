@@ -5,7 +5,8 @@ const path = require("path");//
 const port = process.env.PORT || 3003;
 
 //static files
-/* app.use(express.static('assets')); */
+app.use(express.static('assets'));
+app.use ('/boot', express.static('node_modules/bootstrap/dist'));
 //configuracion de HBS
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname + '/views'));
@@ -31,7 +32,7 @@ app.get("/productos", (req, res) => {
   res.render("productos", {
     title: ":::: Productos :::",
   });
-});
+});                                                                    
 
 app.get("*", (req, res) => {
   res.status(404).send("esta pagina no existe    ");
